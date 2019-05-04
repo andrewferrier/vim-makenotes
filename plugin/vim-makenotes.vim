@@ -4,7 +4,7 @@ endif
 let g:loaded_makenotes = 1
 
 function! SaveNote(location)
-    let l:input = input('Filename: ')
+    let l:input = input('Filename slug: ')
     if l:input != ''
         let l:title = expand(a:location) . strftime('%F') . '-' . l:input . '.mkd.txt'
         execute 'saveas ' . l:title
