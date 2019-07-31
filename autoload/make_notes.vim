@@ -6,7 +6,7 @@ let g:loaded_makenotes = 1
 function! make_notes#SaveNote(location)
     let l:input = input('Filename slug: ')
     if l:input !=# ''
-        let l:title = expand(a:location) . strftime('%F') . '-' . l:input . '.mkd.txt'
+        let l:title = expand(a:location) . strftime('%F') . '-' . l:input . '.mkd'
         execute 'saveas ' . l:title
     else
         redraw!
@@ -16,7 +16,7 @@ endfunction
 function! make_notes#NewNote(location)
     let l:input = input('Note title: ')
     if l:input !=# ''
-        let l:title = expand(a:location) . strftime('%F') . '-' . l:input . '.mkd.txt'
+        let l:title = expand(a:location) . strftime('%F') . '-' . l:input . '.mkd'
         execute 'edit ' . l:title
         let failed = append(0, ['# ' . l:input, ''])
     else
