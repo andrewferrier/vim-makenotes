@@ -3,7 +3,7 @@ if exists('g:loaded_makenotes') || &compatible
 endif
 let g:loaded_makenotes = 1
 
-function! make_notes#SaveNote(location)
+function! make_notes#SaveNote(location) abort
     let l:input = input('Filename slug: ')
     if l:input !=# ''
         let l:title = expand(a:location) . strftime('%F') . '-' . l:input . '.mkd'
@@ -13,7 +13,7 @@ function! make_notes#SaveNote(location)
     endif
 endfunction
 
-function! make_notes#NewNote(location)
+function! make_notes#NewNote(location) abort
     let l:input = input('Note title: ')
     if l:input !=# ''
         let l:title = expand(a:location) . strftime('%F') . '-' . l:input . '.mkd'
