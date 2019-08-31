@@ -17,7 +17,7 @@ function! make_notes#NewNote(location) abort
     let l:input = input('Note title: ')
     if l:input !=# ''
         let l:title = expand(a:location) . strftime('%F') . '-' . l:input . '.mkd'
-        execute 'edit ' . l:title
+        execute 'split ' . l:title
         let failed = append(0, ['# ' . l:input, ''])
     else
         redraw!
