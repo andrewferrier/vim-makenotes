@@ -4,13 +4,14 @@ endif
 let g:loaded_makenotes = 1
 
 function s:MakeNote(location, new) abort
-    let l:title = join(split(input('Note title: ')), '-')
+    let l:humantitle = input('Note title: ')
+    let l:title = join(split(l:humantitle), '-')
 
     if l:title !=# ''
         let l:filename = expand(a:location) . strftime('%F') . '-' . l:title . '.mkd'
         if a:new
             execute 'split ' . l:filename
-            let failed = append(0, ['# ' . l:title, ''])
+            let failed = append(0, ['# ' . l:humantitle, ''])
         else
             execute 'saveas ' . l:filename
         endif
