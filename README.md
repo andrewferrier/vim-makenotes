@@ -1,5 +1,7 @@
 # vim-makenotes
 
+*Deprecated*; I no longer use/maintaine this plugin, so it's archived.
+
 `vim-makenotes` is a vim plugin designed to provide a way to quickly
 start/save Markdown-based notes files. It provides the commands
 `make_notes#SaveNote`, which saves an existing file in the relevant directory
